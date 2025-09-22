@@ -1,449 +1,287 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #box2{
-            height: 150px;
-            background-color: white;
-            margin-left: 120px;
-            margin-right: 120px;
-            border-radius: 20px;
-            box-shadow: 100px;
-            box-shadow: 0px 0px 40px rgb(159, 154, 154);
-        }
-        .white{
-            background-color: white;
-           
-            border-radius: 6px;
-            border: 1px solid blue;
-        }
-        .blue{
-            background-color: blue;
-            border-radius: 6px;
-            border: 1px solid blue;
-            color: white;
-        }
-        .information>p{
-            margin-top: -40px;
-           
-        }
-        .information>h4{
-            font-size: 35px;
-            margin-top: -40px;
-            font-weight: 100;
-        }
-        .information>h1{
-            font-size: 50px;
-        }
-        .photo{
-            flex: 1;
-            margin-top: -50px;
-            padding-right: 50px;
-            height: 700px;
-            width: 700px;
-        }
-        .information{
-            flex: 1;
-            padding-left: 120px;
-            padding-top: 50px;
-        }
-        #objective{
-            height: 450px;
-            display: flex;
-            box-sizing: border-box;
-        }
-        .video{
-            padding-left: 350px;
-        }
-        #box{
-            background-color: black;
-            height: 600px;
-        }
-        .box1{
-            background-color: rgb(249, 249, 216);
-            text-align: center;
-            margin-left: 500px;
-            margin-right: 500px;
-            margin-top: 0px;
-            border-bottom-right-radius: 15px;
-            border-bottom-left-radius: 15px;
-            border-bottom: #ffae00 solid;
-            border-right: #ffb700 solid;
-            border-left: hsl(38, 100%, 50%) solid;
-            padding-top: 1px;
-            padding-bottom: 20px;
-            height: 40px;
-            
-        }
-      body{
-        margin: 0px;
-      }  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Phone Product Store — Manage & Sell from Phone</title>
+  <style>
+    :root{--bg:#061222;--card:#0b1520;--accent:#ef4444;--muted:#94a3b8;--glass:rgba(255,255,255,0.03);--success:#10b981}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#031020 0%, #071827 100%);color:#e6eef8}
+    .container{max-width:980px;margin:12px auto;padding:12px}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    h1{font-size:18px;margin:0}
+    p.lead{margin:2px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.card{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 8px 24px rgba(2,6,23,0.6)}
 
-       li{
-        color: white;
-        list-style: none;
-        font-size: 20px;
-       }        
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+input[type=text], input[type=number], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit;font-size:14px}
+textarea{min-height:64px}
+.btn{display:inline-block;padding:9px 12px;border-radius:9px;background:var(--accent);color:#fff;border:none;font-weight:600;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.btn.small{padding:6px 8px;font-size:13px}
 
-        .head{
-            background-color: rgb(27, 27, 27);
-            height: 70px;
-            margin-top: -20px;
-            padding-top: 50px;
-        }
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:8px}
+.product{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:10px;display:flex;flex-direction:column;gap:8px}
+.product img{width:100%;height:140px;object-fit:cover;border-radius:8px;background:#091021}
+.p-title{font-weight:700;font-size:14px}
+.p-price{color:var(--accent);font-weight:700}
+.row-between{display:flex;justify-content:space-between;align-items:center}
+.small{font-size:12px;color:var(--muted)}
+.muted{color:var(--muted)}
 
-        .home{
-            padding-bottom: 50px;
-        }
+.form-grid{display:grid;grid-template-columns:1fr 120px;gap:8px}
+.controls{display:flex;gap:8px;align-items:center}
 
-        
-        .project{
-            padding-left: 130px;
-           
-            margin-top: -39px;
-        }
+@media(max-width:640px){
+  header{flex-direction:column;align-items:flex-start}
+  .products{grid-template-columns:repeat(2,1fr)}
+  .product img{height:110px}
+  .form-grid{grid-template-columns:1fr}
+}
 
-        .About{
-            padding-left: 240px;
-            
-           margin-top: -39px;
-
-        }
-        .Skills{
-            padding-left: 370px;
-            
-            margin-top: -39px;
-        }
-        .Contact{
-            padding-left: 470px;
-            margin-top: -39px;
-        }
-        .Suitable>h3{
-            text-align: center;
-            padding-top: 20px;
-            font-size: 40px;
-
-        }
-        .Suitable>hr{
-            margin-left: 100px;
-            margin-right: 100px;
-            margin-top: -30px;
-        }
-        .Backend{
-            text-align: center;
-            margin-top: -45px;
-            font-size: 20px;
-        }
-        .Frontend{
-            padding-left: 20px;
-            font-size: 20px;
-        }
-        .Software{
-            padding-left: 900px;
-            margin-top: -43px;
-            font-size: 20px;
-        }
-        .Expertise{
-            font-size: 50px;
-            padding-left: 120px;
-            
-        }
-        #box3{
-            display: flex;
-            box-sizing: border-box;
-            height: 300px;
-            background-color:white;
-            margin-left: 120px;
-            margin-right: 120px;
-            border-radius: 20px;
-            box-shadow: 100px;
-            box-shadow: 0px 0px 40px rgb(197, 190, 190);
-        }
-        .photo2{
-            flex: 1;
-            padding-left: 25px;
-            padding-top: 25px;
-            
-           
-        }
-        .photo2>img{
-            border-radius: 10px;
-
-        }
-        .developement{
-            flex: 4;
-            padding-left: 20px;
-        }
-        .developement>h3{
-            
-            font-size: 30px;
-        }
-        .developement>p{
-           margin-top: -20px;
-            font-size: 20px;
-        }
-        .tech{
-            font-size: 50px;
-            padding-left: 120px;
-            
-        }
-        .vs-code{
-           margin-left: 120px;
-            
-        }
-        .vs-code>img{
-            height: 100px;
-            width: 100px;
-        }
-        .git{
-            margin-left: 350px;
-            margin-top: -150px;
-            
-        }
-        .git>img{
-            height: 100px;
-            width: 100px;
-        }
-        .git>p{
-            margin-left: 30PX;
-        }
-        .reactjs{
-           margin-left: 600px;
-           margin-top: -157px;
-        }
-        .reactjs>img{
-            height: 100px;
-            width: 100px;
-        }
-        .reactjs>p{
-            margin-left: 25PX;
-        }
-        .mongo{
-          margin-left: 860px;
-          margin-top: -155px;
-        }
-        .mongo>img{
-            height: 100px;
-            width:100px ;
-        }
-        .mongo>p{
-            margin-left: 20px;
-        }
-        .npm{
-          margin-left: 1100px;
-          margin-top: -150px;
-        }
-       .npm>img{
-        height: 100px;
-        width: 100px;
-       }
-       .npm>p{
-        margin-left: 30px;
-       }
-       .soft-skills{
-        padding-left: 120px;
-       }
-       .soft-skills>p{
-        font-size: 50px;
-       }
-       #box4{
-        display: flex;
-            box-sizing: border-box;
-            height: 300px;
-            background-color:white;
-            margin-left: 120px;
-            margin-right: 120px;
-            border-radius: 20px;
-            box-shadow: 100px;
-            box-shadow: 0px 0px 40px rgb(197, 190, 190);
-       }
-       .time{
-        padding-left: 150px;
-        padding-top: 50px;
-       }
-       .time>p{
-        padding-left: 50px;
-        font-size: 20px;
-       }
-       .excellent{
-        padding-left: 250px;
-        padding-top: 50px;
-       }
-       .excellent>p{
-        padding-left: 50px;
-        font-size: 20px;
-       }
-       .problem{
-        padding-left: 200px;
-        padding-top: 50px;
-       }
-       .problem>p{
-        padding-left: 50px;
-        font-size: 20px;
-       }
-
-
-    </style>
+  </style>
 </head>
 <body>
-    <section id="box">
-        <article class="head">
-            <div class="Home">
-                <ul>
-                   <li>Home</li> 
-                </ul>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Phone Product Store</h1>
+        <p class="lead">Add products from your phone, share to customers, take orders on WhatsApp — all without a server.</p>
+      </div>
+      <div style="text-align:right">
+        <div class="small">Stored: <strong id="storageCount">0</strong></div>
+        <div class="small">Tip: Use Chrome on mobile for best experience.</div>
+      </div>
+    </header><div class="grid">
+  <section class="card" aria-label="Add product form">
+    <form id="productForm">
+      <input type="hidden" id="editingId" />
+      <div class="form-grid">
+        <div>
+          <label for="title">Product name</label>
+          <input id="title" type="text" placeholder="Example: Leather Wallet" required />
 
+          <label for="desc" style="margin-top:8px">Short description</label>
+          <textarea id="desc" placeholder="Size, color, condition (new/used)..."></textarea>
+
+          <label for="category" style="margin-top:8px">Category</label>
+          <input id="category" type="text" placeholder="e.g. Wallets, Toys, Accessories" />
+
+          <label for="sku" style="margin-top:8px">SKU / Code (optional)</label>
+          <input id="sku" type="text" placeholder="e.g. WAL-001" />
+
+          <label for="stock" style="margin-top:8px">Stock qty (optional)</label>
+          <input id="stock" type="number" min="0" placeholder="10" />
+        </div>
+
+        <div>
+          <label for="price">Price (₹)</label>
+          <input id="price" type="number" placeholder="499" min="0" required />
+
+          <label for="image" style="margin-top:8px">Product image</label>
+          <input id="image" type="file" accept="image/*" />
+
+          <div style="margin-top:12px;display:flex;gap:8px;flex-direction:column">
+            <button class="btn" id="addBtn" type="submit">Add product</button>
+            <button class="btn ghost" id="clearBtn" type="button">Clear</button>
+            <div style="display:flex;gap:8px">
+              <button class="btn ghost small" id="exportBtn" type="button">Export JSON</button>
+              <button class="btn ghost small" id="importBtn" type="button">Import JSON</button>
             </div>
-            <div class="project">
-                <ul>
-                    <li>Project</li>
-                </ul>
-
-            </div>
-            <div class="About ">
-                <ul>
-                    <li>About me</li>
-                </ul>
-            </div>
-
-            <div class="Skills">
-                <ul>
-                    <li>Skills</li>
-                </ul>
-            </div>
-            <div class="Contact">
-                <ul>
-                    <li>Contact me</li>
-                </ul>
-            </div>
-            
-
-        </article>
-
-        <div class="box1">
-            <h3>Performed At <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYBAMAAABpfeIHAAAAMFBMVEX0vQD/ygBHcEzEpgD6wgAAHAD4wAD4wQD3wAD5wgDzvQD4wQD2vwD+xwD6wgD3wACiX/GUAAAAEHRSTlP/HwANoQ+Pd+ZX2j/ALINp5zpitgAAAHpJREFUeAFjYGAQUjIRUoIDsEAAG7oAAzu6AEMnugDDanQBhrPoAgzO6AIMyegCPHABs3dgkKz3CSoAAxM4NqEKLGDg2oQmwHMJVQsXVIuJCxh4q39CtZYL3R2f0ASS0JzuiOa5s2jeX40WQJ1oQciOFMgdHUDfGiEEAHO7N7u+MZtRAAAAAElFTkSuQmCC" alt="img of techpathshala logo"> <a href="">View More</a></h3>
-
+            <input id="importFile" type="file" accept="application/json" style="display:none" />
+          </div>
         </div>
-        <div class="video">
-            <video>
-              <source src="https://videos.pexels.com/video-files/7385122/7385122-sd_640_360_30fps.mp4">  
-            </video>
+      </div>
+    </form>
+  </section>
 
-        </div>
-
-    </section>
-    <section id="objective">
-        <div class="information">
-            <h1> Front-end Developer</h1>
-        
-        
-            <h4>SAISH HARIHARAN</h4>
-            
-            <p>I  am an engineering IT student. <br>studing at SIES GST <br>I have knowledge about HTML,CSS and basic JavaScript  </p>
-            <br>
-            <button class="blue">Download Resume</button>
-            <button class="white">See My WORK</button>
-
-        </div>
-        <div class="photo">
-            <img src="https://img.freepik.com/free-photo/portrait-expressive-young-man-wearing-formal-suit_273609-6942.jpg" height="540px " width="500px">
-
-        </div>
-
-
-
-    </section>
-    <section id="box2">
-        <div class="Suitable">
-         <h3>I'm Suitable For</h3>
-         <hr>
-        </div>
-        <div class="Frontend">
-            <p>Frontend Developer</p>
-        </div>
-        <div class="Backend">
-            <p>Backend Developer </p>
-
-        </div>
-        <div class="Software">
-            <p>Software Architect</p>
-        </div>
-    </section>
-    <div class="Expertise">
-        <P>Expertise</P>
+  <section class="card" aria-label="Product list & search">
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+      <input id="search" class="search" placeholder="Search products..." style="flex:1;padding:8px;border-radius:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.04)" />
+      <select id="sort" style="padding:8px;border-radius:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.04)">
+        <option value="new">Newest</option>
+        <option value="price-asc">Price low→high</option>
+        <option value="price-desc">Price high→low</option>
+      </select>
     </div>
-    <section id="box3">
-        <div class="photo2">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbpAMLVXi9eJj9xGjEpegFK54ImyuJ6BwAlA&s" alt="img of code" height="250px " width="300px">
-        </div>
-        <div class="developement">
-            <h3>Frontend DEVELOPER</h3><br>
-            <p>Short Description About Your Work And Why you<br> are expert.<br>hjaGrck,BUT;RKIUFHXGF;KAJUSG;BKVJTHG;<br>LAKSJDHF;KCJ</p>
-        </div>
-       
 
-    </section>
-    <div class="tech">
-        <p>Tech Skills</p>
-<section id="logo">
-    </div>
-    <div class="vs-code">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADZklEQVR4AWKgCWjYL8DdcWq/8LTr99W2fJmvAeClrIHbiKIoevvKfZGssXZfua/SN06XxCAws9fM1IbkMJqZRmnMsGaX21eifl7u/KyVWcE3+84cSYv3/PdnNBEy8FhhuYHGNRt1q4LyRcmbiSlyKWJQ5HHKG9YEtSsC/4LkTSuBRxCpC+ajftUmoqhZpsC8EkhF7nQs6Ba5e3kIdSsSp5oCPgpMxdKSOxGzcNewuNApdVO9RIE5yZ2Mabnjyle9qF2WlFQtCryzwlVqQTxDVgYxcN3ULDUTSYcS8MxcU2DkohDDZyEi/N2Mq1LF8moWuFhyH1csCAVCueMs0gAMnnsxxGI3Vrpp8OUBtbqrKJ+34ZswcsZiooMCp5KaMxt9JwVwwpdloHIhiKoFcVFJks7ND6v7mZzfUdEB9J+OYoCFaaBIM7gS+GYtroovT8XCJSFUzPsQjyPwS+GUuo/BUOJkmCKSlrYdgWdW4J0WlPG7Yo7Mu6lUI89HQlSRBlyG4zaJpKXrgAIsKpkS+ClRPheHAqPOyJOS/TMqOuBKDyV6Waaj5o+gaEJNA/4Zls/6oEn2DxZpQFJ6jnzoORYtTRsCz7RNkXxckezvLNKApBRPFaJ8WdB5KOg+1mGjyzKuLfDtOgK+mWZ4pjjicUEJx9tBia5jhyOHYzedJ83QJIvFOhCPh+XcV4Ujofa6dY8lR1ooEoBpZaQU+BoRHWDA0iF4p8SFZ1LwapxQou0ghA6nLP7thudsShhJAl9YpIHlk0OqLBWlpGjMVHvdfmipLWknzndKOi1fksDn1CgBloSIJEIBGyUTBbgMR8yCINpY4sYtoI6Phi63JJNFOigw8ZxFkkAQLycMpEqbNYpW6395awJtDuaB2pLMTyzSADAsfIbiiRCKx1k+Noyr0mKZSiIdLaT5QFC9G8r8yCINiIcr1vyxJMekBIuSMB2alIBkfohowZ1i7psctaSkYV9QuSsGS+KMqm8XuHPMvefguJOo36PAjirVgXuJuZPPkYeIKBpJPSdQQYFAWIeNe4tpGWjat9HI4gZSxwmUb4vxPpwSlgeNQMgAc68SFLCVQO2uoMwReOcqDxpvQgV4sFRToo4SNf8EnrKcyJN3kcD9Fusn8XcCzNXnF/B33L0vN+f9BIXpuIMaAMJ1njN1ef7EAAAAAElFTkSuQmCC" alt="logo of vs code">
-        <p>VSCODE</p>
-
-    </div>
-    <div class="git">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACTklEQVR4AcWVNXAcQRBFx8zMjpcSM4di6dDMGDuPHJmZ2c7MiRlDM2SmyMyMYl790VVXTbVqtDWHXfWP5/6bv9O9ItlqiHuz/oWdJ/+hxrg3XWSzYL4C8kmNCS3JuHFdzOtSH/dWQmSeXQgAjKyPeb4EyCXEgqxD1Ma8VRUR94YCMTtrEDBfAflSOPUPFIh5P8vsn99L7cxB1MTcFVCrOelv2HkE8970G5j3gdakHaI6mjBPKGGu6IBgBbAndElSgiBzyJciCDWJqqh7hq8pDzu30nIm8OfLyZzEk/hWZlfguS/rjnkpH0yYr4B8KTLXJfEz5LzGcycYd1cgZhGE8eWohDkEc1IwBNQBGoQWvUogRi3KzRkAxAAUiC+ldrPSqv6vkP1OnRN1Uff4/4jzIBCiIuJFIWmuKDAJAFg+GeI1zYmHMB8slALApnYgQuJzif1NAhBEUBIkFeBrqd1EHQKAhYKVblj9CdkfsNh5SQAmSXwuaZMAaakOgENgdjwX5RFnGpmbQHAAatEfZfYXPA9RzsMeyNcczMkCJSFKTCE4gNodcsfojMu/Q85TaU5iEIW0niCKTSForW5iQmTOIfJprRGECoCon9I6vH5VwyemHqKA+xongcj/AKKrkkA/fFYbmAQ3TwFiC18D86OaeweJYg+uoIOJqXdbsPpZZj/Tjm3NzlNNYh3UpwrxQzt1ExMy27lJEmhFeR70EzPmFqRgnVqLQqmbm7coCbGnuQwmpmbnWUlCs/NsJaHO9qxAjPsTci//DbnnADBaJFktk63VVxGkRzAAAAAASUVORK5CYII=" alt="LOGO OF GIT">
-        <p>GIT</p>
-
-    </div>
-    <div class="reactjs">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADaElEQVR4Ac3XA6xcQRiG4altXNS2bcdObdtuY6u2bQW1bZvXtlFu3yRfb87dnGz21Js8F//M/DN7MDD/7WfgjQ8G+dAIgzES3VEeBrnqDoLKumOk2jRSDuedowgWIxqZSEM6nmA2fGDEB3NUlq66GWq7WLm871wmKMl+9EYnjMdZZOK24n30d6bKxqGjyvYpx3gYeD2ACniMSygLYu+NyophAJ4jUZ4rVgzGoqxyPEZ5JwPohjRMtLvfKIgVcMlKxWyvpHJ1dTKAkUhDF5uk+TFP5buxF+mK5bep30V1RzgZwDQkoTly4kOgwaVgB0rLLsVGDrgZYKxt0Ey5pjkZwEQlbI18qIz2mIAwZOMwNmEjjigWprYd1CY/WiFZca/fgIHIxB6cRBBS8RXpCMF7vJH3CEa66qQiGKeUI1M5DTx2XAbDcQsupOnvdXiJDIxFFfiivPgqNk51nmMNbiAVLuUZhtIwA65rIOo4D7riErLxDMk4jKLogXhsdH/abd6OTarbDUVwSLmeIgsX0El9GqM/BiIKHzABvjiGx6iOUyqrByOFUBt1UQRG6qnuCVTDY+XywXiVRaLfIA2gDyJwFY1hZCqSsAGpmAkjlbEV4Uq2X4MxMhOpapsMchG/CfrANYShF4EPlxGEptCiAioq+Tfcgw8M8mE9XG72ozAMfHFfbSOVy5q7qfq8aPjxCRt7Xnji/v4WwGElnwYj/ninuFUE6sDINMUPo4A1d78PD4yep09GA9jU/9I7bwfghzeKW4WhtjcD6HU1ONcALkK3QIuO51uQF0vhcrMVBT3dAtjegl4IwzUHD2FFDeIt3mM9Knt4CHUFbR/CAHzop5F+wHj44CgeoxpO2ryG+eEHfxRwew3fq43n15DJyDoRdcYFZOEpknAIRdDdwUS0UXW7u01EzywTUedBNwPo0zIbSmkMs0zFqbiJtXiBDIxBZfigvPgoNlZ1Xnieiu3XBN7TAG8WozQE4x1eyzvF0pwtRr++HG90W47DVae9ZTlurVwTf3lDwkNjtLNJwS6Ult05GxLqWdsoh+MNyQgvtmTp2CMOtmR/f1M6EWnK6XhbfhllYSyKoT+eI0HctuV6mGmrHI+V85cOJh0xznIwuaV4by8OJhN+5P2dR7OKDo9mf/RwioBfP5z+i8934nQtcHyRrVEAAAAASUVORK5CYII=" alt="">
-        <p>ReactJS</p>
-
-    </div>
-    <div class="mongo">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADoElEQVR4Aa1XA5AlMRDtMtfe/TNrzPy1z7Zt21euY/ls+658VzrbxbNt23auX+Vvzf5VskjVq8mkO3mdTndA2sVlJ5CZ2o+i05aSYR/j/7tkul8DqKMNMuhAl2qsGKm5jA1kuO9TTJqgmHTBRIzUEpAy6ECXDVqPvlTlEpkTzLObTab9tYiU/3XgGGNaX/h/FkUmBVNlCncu4M6nKUbOtFwilw2UL0dfjGGmnKIYu0DT5VZ9crkfyBm4KyaPdgMVGwFgLIxppNdTr7dpP6YYhbujmDDcErSoDYA62lRGwBOPy4+LwARftvKccuYGIyBF0LD6gj4PB1BHG2RqIwz7LLioVEGw6ARasCWobaGgewMFfRkOoI42yNT9JcdM8irR6dns+m8VBhwAV1s8i6M9BP0cIejtUAB1tEEGHYUB4ACXlV3MAM5zpettQSHs5unNBX1nwncgl0AdbZBBB7oaS7G+KPDi2aKnSvdH8KAZmYLO9hH0bTiIvYA2yKADXfUy2E/ITIsjbJ1aax/EM5vYWNCnYYLeM+TMAdTRBhl0oKsZC1Y/4jxerpV2Lv5u7+q99q8Zr4Z4x8K2Lh59hQHgBDcZ9nGlB8IsQTlZ3u5/z3jA0X9rgOOR7yw72VtQZqY6GMGJA4ytvauM/mB2afN8QXcHIO8dl1/pJwk/eAyA7EZ/QQ1zORh1ssG6g/x/q2/AQCbxkH3k78legvZ3x9pX0QD3G30DWrIB94oZANLDTL65E9eHOwbcZAMa6RugtwShPFi9HEFXefCvxch2cFCuaSd3Q7RBdqmvoMJs9NFcAnUQOscuCH95sgCkmP2yto5RLHOywNYKQr00BAKSBU1uKskQgPhu6iBoYWvvtilNpa6pl4b6GxHSKo9T8VxfSQSsZPfPaYXUBCCDDnT1NyJsxeyuZ0ojDM9uOKqhdD82neEdAa6PlDEBGXQMDXJs/9iKUbhxo+Iwcs6DGP5u4bUXox0DxBi0QaY+BwBw4QAsKmxJDm+d3xXZ4OyKqRmC9nZzDNjNwWmnQwYd7eNYcSFRpGV8mvQCkJKOY1j/xgyuUiWwwJcF57WWAvBLdgzw1Yh653J6DleyCi6lKbiU6nlBGoC6Vtrhwqt+rBhp+tfyrEwJ7Wu5VV/3YVLI1p5RPEwQ8YD6YYJHDh47lSrhWSHVfpqhL8bAM6/KxXDnYZ+ACyv1OEWeo2+NFZeViK2TiZbhAON1v4fjFEAdbZBBpzLP8//gWaNQ3aj4mQAAAABJRU5ErkJggg==" alt="">
-        <p>MongoDB</p>
-
-    </div>
-    <div class="npm">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAFVBMVEXLAADaSEjnh4f////yv7/87+/gZmY8ie6OAAAALElEQVR4AWOgEWBUggMBsACTMRwoUCbg4uKKKsDAwDLyBBCBzMDABgpk2gAAdjAkZFFl2WsAAAAASUVORK5CYII=" alt="">
-        <p>NPM</p>
-
-    </div>
-</section>
-<div class="soft-skills">
-
-
-    <p>Soft Skills</p>
+    <div class="small muted">Share a product: open product → "Share" to send details via WhatsApp or phone's Share sheet.</div>
+    <div id="products" class="products" aria-live="polite"></div>
+  </section>
 </div>
-    <section id="box4">
-        <div class="time">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.XfqUMJWCkiEh_0mo2gotOgHaHa&pid=Api&P=0&h=180" alt="time">
 
-        <p>Time <br>Management</p>
+  </div>  <script>
+    // Client-only product manager with WhatsApp order & mobile share
+    const LS_KEY = 'phone_store_v2';
+    let products = [];
 
-        </div>
-        <div class="problem">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.Tg7fvFywT24QYfMQ2awZzgHaHa&pid=Api&P=0&h=180" alt="problem solving">
+    const el = id=>document.getElementById(id);
+    const form = el('productForm');
+    const title = el('title');
+    const price = el('price');
+    const desc = el('desc');
+    const image = el('image');
+    const productsEl = el('products');
+    const storageCount = el('storageCount');
+    const editingId = el('editingId');
+    const search = el('search');
+    const sort = el('sort');
+    const exportBtn = el('exportBtn');
+    const importBtn = el('importBtn');
+    const importFile = el('importFile');
+    const clearBtn = el('clearBtn');
+    const sku = el('sku');
+    const category = el('category');
+    const stock = el('stock');
+    const addBtn = el('addBtn');
 
-        <p>Problem <br> Solving</p>
+    function load(){
+      try{ products = JSON.parse(localStorage.getItem(LS_KEY) || '[]'); }catch(e){ products = [] }
+      render();
+    }
 
-        </div>
-        <div class="excellent">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.Wj-WtDiiW7oNVDpThD_MhgHaHa&pid=Api&P=0&h=180" alt="">
+    function save(){ localStorage.setItem(LS_KEY, JSON.stringify(products)); storageCount.textContent = products.length; }
+    function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,7) }
 
-        <p>Excellent </p>
+    function readFileAsDataURL(file){
+      return new Promise((res,rej)=>{
+        const r = new FileReader(); r.onload = ()=>res(r.result); r.onerror = rej; r.readAsDataURL(file);
+      })
+    }
 
-       
-        </div>
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const t = title.value.trim();
+      const p = Number(price.value) || 0;
+      const d = desc.value.trim();
+      const s = sku.value.trim();
+      const c = category.value.trim();
+      const st = Number(stock.value) || null;
 
+      let imgData = null;
+      if(image.files && image.files[0]){
+        try{ imgData = await readFileAsDataURL(image.files[0]) } catch(err){ console.warn('image read failed',err) }
+      }
 
-    </section>
+      const id = editingId.value;
+      if(id){
+        const idx = products.findIndex(x=>x.id===id);
+        if(idx>-1){
+          products[idx] = Object.assign(products[idx], {title:t, price:p, desc:d, sku:s, category:c, stock:st, updated:Date.now()});
+          if(imgData) products[idx].image = imgData;
+        }
+        editingId.value=''; addBtn.textContent='Add product';
+      } else {
+        products.unshift({id:uid(), title:t, price:p, desc:d, sku:s, category:c, stock:st, image:imgData, created:Date.now(), updated:Date.now()});
+      }
 
-</body>
+      form.reset(); image.value=''; save(); render();
+    });
+
+    function render(){
+      let list = products.slice();
+      const q = search.value.trim().toLowerCase();
+      if(q) list = list.filter(p => (p.title||'').toLowerCase().includes(q) || (p.desc||'').toLowerCase().includes(q) || (p.category||'').toLowerCase().includes(q) || (p.sku||'').toLowerCase().includes(q));
+      if(sort.value==='price-asc') list.sort((a,b)=>a.price-b.price)
+      else if(sort.value==='price-desc') list.sort((a,b)=>b.price-a.price)
+      else list.sort((a,b)=>b.created - a.created)
+
+      productsEl.innerHTML = '';
+      if(list.length===0){ productsEl.innerHTML = '<div class="small" style="padding:8px">No products yet.</div>'; storageCount.textContent = products.length; return }
+
+      for(const p of list){
+        const card = document.createElement('div'); card.className='product';
+        const img = document.createElement('img'); img.src = p.image || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="100%" height="100%" fill="%23091121"/></svg>';
+        img.alt = p.title || 'product';
+
+        const titleEl = document.createElement('div'); titleEl.className='p-title'; titleEl.textContent = p.title;
+        const priceEl = document.createElement('div'); priceEl.className='p-price'; priceEl.textContent = '₹' + (p.price||0);
+        const descEl = document.createElement('div'); descEl.className='small'; descEl.textContent = p.desc || '';
+        const meta = document.createElement('div'); meta.className='small muted'; meta.textContent = (p.category? p.category + ' • ' : '') + (p.sku? 'SKU:'+p.sku : '') + (p.stock!=null? (' • stock:'+p.stock) : '');
+
+        const btnRow = document.createElement('div'); btnRow.style.display='flex'; btnRow.style.gap='6px'; btnRow.style.marginTop='8px'; btnRow.style.flexWrap='wrap';
+        const edit = document.createElement('button'); edit.className='btn ghost small'; edit.textContent='Edit';
+        const del = document.createElement('button'); del.className='btn ghost small'; del.textContent='Delete';
+        const share = document.createElement('button'); share.className='btn small'; share.textContent='Share';
+        const order = document.createElement('button'); order.className='btn ghost small'; order.textContent='Order (WhatsApp)';
+
+        edit.onclick = ()=>populateForm(p);
+        del.onclick = ()=>{ if(confirm('Delete this product?')){ products = products.filter(x=>x.id!==p.id); save(); render(); } }
+        share.onclick = ()=>shareProduct(p);
+        order.onclick = ()=>orderProduct(p);
+
+        btnRow.appendChild(edit); btnRow.appendChild(del); btnRow.appendChild(share); btnRow.appendChild(order);
+
+        card.appendChild(img);
+        card.appendChild(titleEl);
+        card.appendChild(priceEl);
+        card.appendChild(descEl);
+        card.appendChild(meta);
+        card.appendChild(btnRow);
+        productsEl.appendChild(card);
+      }
+      storageCount.textContent = products.length;
+    }
+
+    function populateForm(p){
+      editingId.value = p.id; title.value = p.title; price.value = p.price; desc.value = p.desc || ''; sku.value = p.sku || ''; category.value = p.category || ''; stock.value = p.stock!=null? p.stock : '';
+      addBtn.textContent='Update product'; window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    function shareProduct(p){
+      // Compose text
+      const txt = `Product: ${p.title}\nPrice: ₹${p.price}\n${p.desc? p.desc + '\n' : ''}${p.sku? 'SKU: '+p.sku+'\n' : ''}${p.category? 'Category: '+p.category+'\n' : ''}`;
+      // Use Web Share API when available (mobile)
+      if(navigator.share){
+        const files = [];
+        if(p.image){
+          // try to convert dataURL to blob
+          fetch(p.image).then(r=>r.blob()).then(blob=>{
+            const f = new File([blob], (p.sku||p.title||'product') + '.jpg', {type:blob.type});
+            navigator.share({title: p.title, text: txt, files:[f]}).catch(()=>{ window.open('https://wa.me/?text='+encodeURIComponent(txt), '_blank') });
+          }).catch(()=>{ window.open('https://wa.me/?text='+encodeURIComponent(txt), '_blank') });
+        } else {
+          navigator.share({title:p.title, text:txt}).catch(()=>{ window.open('https://wa.me/?text='+encodeURIComponent(txt), '_blank') });
+        }
+      } else {
+        // fallback: open WhatsApp with prefilled text
+        window.open('https://wa.me/?text='+encodeURIComponent(txt), '_blank');
+      }
+    }
+
+    function orderProduct(p){
+      // Prefilled WhatsApp message for ordering
+      const msg = `Hello, I want to order this product:\n${p.title} (₹${p.price})${p.sku? ' - '+p.sku : ''}\nQty: 1\nPlease confirm.`;
+      window.open('https://wa.me/?text='+encodeURIComponent(msg), '_blank');
+    }
+
+    exportBtn.onclick = ()=>{
+      const data = JSON.stringify(products, null, 2);
+      const blob = new Blob([data], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='products-export.json'; a.click(); URL.revokeObjectURL(url);
+    }
+
+    importBtn.onclick = ()=> importFile.click();
+    importFile.onchange = async (e)=>{
+      const f = e.target.files[0]; if(!f) return; try{
+        const txt = await f.text(); const imported = JSON.parse(txt);
+        if(!Array.isArray(imported)) return alert('Invalid file format');
+        for(const item of imported){ item.id = item.id || uid(); products.push(item); }
+        save(); render(); importFile.value=''; alert('Import complete');
+      }catch(err){ alert('Import failed: '+err.message) }
+    }
+
+    clearBtn.onclick = ()=>{ if(confirm('Clear form?')) form.reset(); image.value=''; editingId.value=''; addBtn.textContent='Add product' }
+
+    search.addEventListener('input', ()=>render());
+    sort.addEventListener('change', ()=>render());
+
+    // init
+    load();
+
+    // localStorage availability check
+    try{ localStorage.setItem('__test__','1'); localStorage.removeItem('__test__'); } catch(e){ alert('Warning: Your browser may not support local storage. Saving may not work.') }
+  </script></body>
 </html>
